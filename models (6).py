@@ -12,8 +12,9 @@ class Piece(models.Model):
     album_date = models.CharField(max_length=50)
     album_pic = models.CharField(max_length=100)
     album_tracks=models.TextField()
+    pos=models.DecimalField(max_digits=6, decimal_places=1)
     genres=models.CharField(max_length=255)
     class Meta:
-        ordering = ["album_date", "album_name", "track"]
+        ordering = ["album_date", "album_name", "pos"]
     def __str__(self):
         return self.track
